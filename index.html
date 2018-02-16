@@ -8,20 +8,23 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="app">
-      <span v-if="seen">
-        Now you see me.
-      </span>
-      <span v-if="unseen">
-        you don't see me.
-      </span>
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
     </div>
 
     <script type="text/javascript">
       var app =  new Vue({
         el: '#app',
         data: {
-          seen: true,
-          unseen: false
+          todos: [
+            { text: 'Learn Javascript' },
+            { text: 'Learn Vue' },
+            { text: 'Build something awesome' },
+            { text: "Add on console: app.todos.push({ text: 'New item' })" }
+          ]
         }
       });
     </script>
