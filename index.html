@@ -8,19 +8,26 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="app">
-      <p>Mensagem Original: "{{ message }}"</p>
-      <p>Mensagem ao contrário: "{{ reversedMessage }}"</p>
+     <p>{{ fullName }}</p>
     </div>
 
     <script type="text/javascript">
       var app =  new Vue({
         el: '#app',
         data: {
-          message: 'Olá Vue'
+          firstName: 'Romenig',
+          lastName: ' Lima Damasio'
         },
         computed: {
-          reversedMessage: function () {
-            return this.message.split('').reverse().join('')
+          fullName: {
+            get: function () {
+              return this.firstName + ' ' + this.lastName
+            },
+            set: function (newValue) {
+              var names = newValue.split(' ')
+              this.firstName = names.shift()
+              this.lastName = names.pop()
+            }
           }
         }
       });
