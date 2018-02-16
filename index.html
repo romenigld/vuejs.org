@@ -7,23 +7,21 @@
   <body>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
-    <div id="app2">
-      <span v-bind:title="message">
-        Hover your mouse over me for a few seconds
-        to see my dynamically bound title!
+    <div id="app">
+      <span v-if="seen">
+        Now you see me.
+      </span>
+      <span v-if="unseen">
+        you don't see me.
       </span>
     </div>
 
     <script type="text/javascript">
-      var app2 =  new Vue({
-        el: '#app2',
+      var app =  new Vue({
+        el: '#app',
         data: {
-          message: 'You loaded this page on ' + new Date().toLocaleString()
-        },
-        methods: {
-          sayHello: function() {
-            return this.title;
-          }
+          seen: true,
+          unseen: false
         }
       });
     </script>
