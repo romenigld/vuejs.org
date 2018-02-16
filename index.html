@@ -8,27 +8,20 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="app">
-      <app-nav></app-nav>
-      <app-view>
-        <app-sidebar></app-sidebar>
-        <app-content></app-content>
-      </app-view>
+      <p>Mensagem Original: "{{ message }}"</p>
+      <p>Mensagem ao contrário: "{{ reversedMessage }}"</p>
     </div>
 
     <script type="text/javascript">
-      Vue.component('todo-item', {
-        props: ['todo'],
-        template: '<li>{{ todo.text }}</li>'
-      })
-
       var app =  new Vue({
         el: '#app',
         data: {
-          groceryList: [
-            { id: 0, text: 'Vegetables' },
-            { id: 1, text: 'Cheese' },
-            { id: 2, text: 'Whatever else humans are supposed to eat' }
-          ]
+          message: 'Olá Vue'
+        },
+        computed: {
+          reversedMessage: function () {
+            return this.message.split('').reverse().join('')
+          }
         }
       });
     </script>
