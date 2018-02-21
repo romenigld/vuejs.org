@@ -8,22 +8,20 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="app">
-      <my-component v-bind:class="{ active: isActive }"></my-component>
+      <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
     </div>
 
 
     <script type="text/javascript">
 
-      Vue.component('my-component', {
-        template: '<p class="foo bar">Oi</p>'
-      })
-
       var app =  new Vue({
         el: '#app',
         data: {
-          isActive: true
+          activeColor: 'red',
+          fontSize: 30
         }
       });
+
     </script>
   </body>
 </html>
