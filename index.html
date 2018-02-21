@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="app">
-      <div v-bind:class="classObject"></div>
+      <div v-bind:class="[activeClass, errorClass]"></div>
     </div>
 
 
@@ -16,10 +16,8 @@
       var app =  new Vue({
         el: '#app',
         data: {
-          classObject: {
-            active: true,
-            'text-danger': false
-          }
+          activeClass: 'active',
+          errorClass: 'text-danger'
         }
       });
     </script>
