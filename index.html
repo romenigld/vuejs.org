@@ -8,17 +8,20 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="app">
-      <div v-bind:class="[{ active: isActive }, errorClass]"></div>
+      <my-component v-bind:class="{ active: isActive }"></my-component>
     </div>
 
 
     <script type="text/javascript">
+
+      Vue.component('my-component', {
+        template: '<p class="foo bar">Oi</p>'
+      })
+
       var app =  new Vue({
         el: '#app',
         data: {
-          isActive: false,
-          activeClass: 'active',
-          errorClass: 'text-danger'
+          isActive: true
         }
       });
     </script>
