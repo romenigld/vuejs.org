@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="app">
-      <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+      <div v-bind:style="styleObject"></div>
     </div>
 
 
@@ -17,8 +17,10 @@
       var app =  new Vue({
         el: '#app',
         data: {
-          activeColor: 'red',
-          fontSize: 30
+          styleObject: {
+            activeColor: 'red',
+            fontSize: '13px'
+          }
         }
       });
 
