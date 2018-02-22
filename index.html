@@ -8,14 +8,7 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="app">
-      <template v-if="loginType === 'username'">
-        <label>Usuário</label>
-        <input placeholder="Informe o nome de usuário" key="username-input">
-      </template>
-      <template v-else>
-        <label>E-mail</label>
-        <input placeholder="Informe o endereço de e-mail" key="email-input">
-      </template>
+      <h1 v-show="ok">Olá</h1>
     </div>
 
 
@@ -24,7 +17,7 @@
       var app =  new Vue({
         el: '#app',
         data: {
-
+          ok: true
         }
       });
 
