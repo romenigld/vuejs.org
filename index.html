@@ -8,11 +8,17 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="app">
-      <div v-if="Math.random() > 0.5">
-        Agora você me vê
+      <div v-if="type === 'A'">
+        A
+      </div>
+      <div v-else-if="type === 'B'">
+        B
+      </div>
+      <div v-else-if="type === 'C'">
+        C
       </div>
       <div v-else>
-        Agora você ñ me vê
+        Não é A, B ou C
       </div>
     </div>
 
@@ -22,7 +28,7 @@
       var app =  new Vue({
         el: '#app',
         data: {
-          
+          type: 'Z'
         }
       });
 
