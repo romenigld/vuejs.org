@@ -7,22 +7,22 @@
   <body>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
-    <ul id="v-for-object" class="demo">
-        <li v-for="(value, key, index) in object">
-          {{ index }}. {{ key }}: {{ value }}
-        </li>
+    <ul id="example">
+      <li v-for="(item, index) in items" :key="item.id">
+        {{ parentMessage }} - {{ index }} - {{ item.message }}
+      </li>
     </ul>
 
     <script type="text/javascript">
 
-      new Vue({
-        el: '#v-for-object',
-        data: {
-          object: {
-            firstName: 'Zé',
-            lastName: 'Ninguém',
-            age: 30
-          }
+      var example =  new Vue({
+         el: '#example',
+         data: {
+          parentMessage: 'Pai',
+          items: [
+            { message: 'Algo' },
+            { message: 'Outro' }
+          ]
         }
       });
 
