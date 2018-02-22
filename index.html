@@ -8,11 +8,12 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="app">
-      <template v-if="ok">
-        <h1>Título</h1>
-        <p>Parágrafo 1</p>
-        <p>Parágrafo 2</p>
-      </template>
+      <div v-if="Math.random() > 0.5">
+        Agora você me vê
+      </div>
+      <div v-else>
+        Agora você ñ me vê
+      </div>
     </div>
 
 
@@ -21,7 +22,7 @@
       var app =  new Vue({
         el: '#app',
         data: {
-          ok: true
+          
         }
       });
 
