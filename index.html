@@ -8,7 +8,8 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="app">
-      <div v-bind:style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
+      <h1 v-if="ok">Sim</h1>
+      <h1 v-else>Não</h1>
     </div>
 
 
@@ -17,7 +18,7 @@
       var app =  new Vue({
         el: '#app',
         data: {
-        
+          ok: false
         }
       });
 
