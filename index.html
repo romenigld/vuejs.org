@@ -7,17 +7,21 @@
   <body>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
-    <div id="app">
-      <h1 v-show="ok">Olá</h1>
-    </div>
-
+    <ul id="example-1">
+        <li v-for="item in items">
+          {{ item.message }}
+        </li>
+    </ul>
 
     <script type="text/javascript">
 
-      var app =  new Vue({
-        el: '#app',
+      var example1 =  new Vue({
+        el: '#example-1',
         data: {
-          ok: true
+          items: [
+            { message: 'Algo' },
+            { message: 'Outro' }
+          ]
         }
       });
 
