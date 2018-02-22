@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="app">
-      <div v-bind:style="[baseStyles, overridingStyles]"></div>
+      <div v-bind:style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
     </div>
 
 
@@ -17,13 +17,7 @@
       var app =  new Vue({
         el: '#app',
         data: {
-          baseStyles: {
-            activeColor: 'red',
-            fontSize: '13px'
-          },
-          overridingStyles: {
-            
-          }
+        
         }
       });
 
