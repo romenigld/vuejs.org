@@ -7,13 +7,21 @@
   <body>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
-    <div id="example">
-      <my-component
-        v-for="(item, index) in items"
-        v-bind:item="item"
-        v-bind:index="index"
-        v-bind:key="item.id"
-      ></my-component>
+    <div id="todo-list-example">
+      <input
+        v-model="newTodoText"
+        v-on:keyup.enter="addNewTodo"
+        placeholder="Adicionar uma tarefa"
+      >
+      <ul>
+        <li
+          is="todo-item"
+          v-for="(todo, index) in todos"
+          v-bind:key="todo.id"
+          v-bind:title="todo.title"
+          v-on:remove="todos.splice(index, 1)"
+        ></li>
+      </ul>
     </div>
 
     <script type="text/javascript">
