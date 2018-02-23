@@ -8,7 +8,12 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <span v-for="n in 10">{{ n }}</span>
+      <ul>
+        <template v-for="item in items">
+          <li>{{ item.msg }}</li>
+          <li class="divider"></li>
+        </template>
+      </ul>
     </div>
 
     <script type="text/javascript">
@@ -16,14 +21,7 @@
       var example =  new Vue({
          el: '#example',
          data: {
-          numbers: [1, 2, 3, 4, 5 ]
-         },
-         methods: {
-           even: function (numbers) {
-             return numbers.filter(function (number){
-               return number % 2 === 0
-             })
-           }
+
          }
       });
 
