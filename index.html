@@ -8,11 +8,12 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <ul>
-        <li v-for="todo in todos" v-if="!todo.isComplete">
+      <ul v-if="todos.length">
+        <li v-for="todo in todos">
           {{ todo }}
         </li>
       </ul>
+      <p v-else>Não há tarefas a fazer!</p>
     </div>
 
     <script type="text/javascript">
@@ -20,7 +21,7 @@
       var example =  new Vue({
          el: '#example',
          data: {
-
+           todos: []
          }
       });
 
