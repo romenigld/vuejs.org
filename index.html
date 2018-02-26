@@ -8,24 +8,17 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <button v-on:click="greet">Cumprimentar</button>
+      <button v-on:click="say('oi')">Diga oi</button>
+      <button v-on:click="say('tchau')">Diga tchau</button>
     </div>
 
     <script type="text/javascript">
 
     var example =  new Vue({
          el: '#example',
-         data: {
-           name: 'Vue.js'
-         },
-         // define métodos dentro do objeto `methods`
          methods: {
-           greet: function (event) {
-             alert('Olá ' + this.name + '!')
-             //event é o evento DOM nativo
-             if (event) {
-               alert(event.target.tagName)
-             }
+           say: function (message) {
+             alert(message)
            }
          }
       })
