@@ -8,8 +8,9 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <button v-on:click="say('oi')">Diga oi</button>
-      <button v-on:click="say('tchau')">Diga tchau</button>
+      <button v-on:click="warn('Form cannot be submitted yet.', $event)">
+        Enviar
+      </button>
     </div>
 
     <script type="text/javascript">
@@ -17,7 +18,9 @@
     var example =  new Vue({
          el: '#example',
          methods: {
-           say: function (message) {
+           warn: function (message, event) {
+             //agora temos acesso ao evento nativo
+             if (event) event.preventDefault()
              alert(message)
            }
          }
