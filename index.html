@@ -8,8 +8,16 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <!--  o gatilho será chamado se $event.key === 'PageDown' -->
-      <input @keyup.page-down="onPageDown">
+      <!-- Alt + C -->
+      <input @keyup.alt.67="clear">
+
+      <!-- Ctrl + Click -->
+      <div @click.ctrl="doSomething">Do something</div>
+
+      <!-- Teclas modificadoras são diferentes de teclas comuns, e quando utilizadas
+      com eventos keyup, precisam estar pressionadas quando o evento é emitido.
+      Em outras palavras, keyup.ctrl só vai disparar se você soltar alguma tecla enquanto
+      ainda estiver segurando ctrl. E não irá disparar se você soltar a tecla ctrl sozinha. -->
     </div>
 
     <script type="text/javascript">
