@@ -8,13 +8,16 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
+      <!-- `picked` é uma string "a" quando assinalado -->
+      <input type="radio" v-model="picked" value="a">
+
+      <!-- `toggle` é verdadeiro ou falso -->
+      <input type="checkbox" v-model="toggle">
+
+      <!-- `selected` é uma string "abc" quando assinalado -->
       <select v-model="selected">
-        <option v-for="option in options" v-bind:value="option.value">
-          {{ option.text }}
-        </option>
+        <option value="abc">ABC</option>
       </select>
-      <br>
-      <span>Selecionado: {{ selected }}</span>
     </div>
 
     <script type="text/javascript">
@@ -22,12 +25,9 @@
       var example =  new Vue({
            el: '#example',
            data: {
-             selected: 'A',
-             options: [
-               { text: 'Um', value: 'A' },
-               { text: 'Dois', value: 'B' },
-               { text: 'Três', value: 'C' }
-             ]
+            picked: this.picked,
+            toggle: false,
+            selected: this.selected 
            }
 
         })
