@@ -8,8 +8,10 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <input v-model="message" placeholder="Me edite">
-      <p>A mensagem é: {{ message }}</p>
+      <span>Mensagem com múltiplas linhas:</span>
+      <p style="white-space: pre-line;">{{ message }}</p>
+      <br>
+      <textarea v-model="message" placeholder="Escreva bastante"></textarea>
     </div>
 
     <script type="text/javascript">
