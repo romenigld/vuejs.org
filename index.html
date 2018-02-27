@@ -8,14 +8,13 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
-      <label for="jack">Jack</label>
-      <input type="checkbox" id="john" value="John" v-model="checkedNames">
-      <label for="john">John</label>
-      <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
-      <label for="mike">Mike</label>
+      <input type="radio" id="one" value="Um" v-model="picked">
+      <label for="one">Um</label>
       <br>
-      <span>Nomes assinalados: {{ checkedNames }}</span>
+      <input type="radio" id="two" value="Dois" v-model="picked">
+      <label for="two">Dois</label>
+      <br>
+      <span>Escolhido: {{ picked }}</span>
     </div>
 
     <script type="text/javascript">
@@ -23,7 +22,7 @@
       var example =  new Vue({
            el: '#example',
            data: {
-             checkedNames: []
+             picked: this.picked
            }
 
         })
