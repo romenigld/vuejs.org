@@ -8,13 +8,14 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <input type="radio" id="one" value="Um" v-model="picked">
-      <label for="one">Um</label>
+      <select v-model="selected">
+        <option disabled value="">Escolha um item</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
       <br>
-      <input type="radio" id="two" value="Dois" v-model="picked">
-      <label for="two">Dois</label>
-      <br>
-      <span>Escolhido: {{ picked }}</span>
+      <span>Selecionado: {{ selected }}</span>
     </div>
 
     <script type="text/javascript">
@@ -22,7 +23,7 @@
       var example =  new Vue({
            el: '#example',
            data: {
-             picked: this.picked
+             selected: this.selected
            }
 
         })
