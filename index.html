@@ -8,18 +8,8 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <!-- só chama `vm.submit()` quando o `keyCode` é 13 -->
-      <input v-on:keyup.13="submit">
-
-      <!-- igual o acima -->
-      <input v-on:keyup.enter="submit">
-
-      <!-- também funciona com abreviações -->
-      <input @keyup.enter="submit">
-
-<!--  Se necessário, defina apelidos personalizados através do objeto global config.keyCodes: -->
-    <!-- habilita `v-on:keyup.f1` -->
-          Vue.config.keyCodes.f1 = 112
+      <!--  o gatilho será chamado se $event.key === 'PageDown' -->
+      <input @keyup.page-down="onPageDown">
     </div>
 
     <script type="text/javascript">
