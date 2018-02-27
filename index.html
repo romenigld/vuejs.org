@@ -8,8 +8,7 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <select v-model="selected">
-        <option disabled value="">Escolha um item</option>
+      <select v-model="selected" multiple>
         <option>A</option>
         <option>B</option>
         <option>C</option>
@@ -23,7 +22,7 @@
       var example =  new Vue({
            el: '#example',
            data: {
-             selected: this.selected
+             selected: []
            }
 
         })
