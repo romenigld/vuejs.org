@@ -8,23 +8,18 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <!-- dispara mesmo se Alt ou Shift também estiverem pressionados -->
-      <button @click.ctrl="onClick">A</button>
-
-      <!-- dispara quando somente Ctrl estiver pressionado -->
-      <button @click.ctrl.exact="onCtrlClick">A</button>
-
-      <!-- dispara somente se não houverem teclas de sistema pressionadas -->
-      <button @click.exact="onClick">A</button>
+      <input v-model="message" placeholder="Me edite">
+      <p>A mensagem é: {{ message }}</p>
     </div>
 
     <script type="text/javascript">
 
     var example =  new Vue({
          el: '#example',
-         methods: {
-
+         data: {
+           message: this.message
          }
+
       })
 
     </script>
