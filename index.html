@@ -8,10 +8,8 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <span>Mensagem com múltiplas linhas:</span>
-      <p style="white-space: pre-line;">{{ message }}</p>
-      <br>
-      <textarea v-model="message" placeholder="Escreva bastante"></textarea>
+      <input type="checkbox" id="checkbox" v-model="checked">
+      <label for="checkbox">{{ checked }}</label>
     </div>
 
     <script type="text/javascript">
@@ -19,7 +17,7 @@
     var example =  new Vue({
          el: '#example',
          data: {
-           message: this.message
+           checked: false
          }
 
       })
