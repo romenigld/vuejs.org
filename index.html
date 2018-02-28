@@ -14,15 +14,16 @@
     </div>
 
     <script type="text/javascript">
-      var data = { counter: 0 }
-
+    
       Vue.component('simple-counter', {
         template: '<button v-on:click="counter += 1">{{ counter }}</button>',
         // data é tecnicamente uma função, assim o Vue não vai
         // reclamar, mas nós retornamos a mesma referência ao
         // mesmo objeto para qualquer instância do componente
         data: function () {
-          return data
+          return {
+            counter: 0
+          }
         }
       })
 
