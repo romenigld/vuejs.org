@@ -8,10 +8,12 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <select v-model="selected">
-        <!-- Objeto literal atribuído para demonstração -->
-        <option v-bind:value="{ number: 123 }">123</option>
-      </select>
+      <!-- sincronizado depois do "change" ao invés de "input" -->
+      <input v-model.lazy="msg" >
+
+      <input v-model.number="age" type="number">
+
+      <input v-model.trim="msg">
     </div>
 
     <script type="text/javascript">
@@ -19,7 +21,8 @@
       var example =  new Vue({
            el: '#example',
            data: {
-
+             msg: this.msg,
+             age: this.age
            }
 
         })
