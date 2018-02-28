@@ -8,7 +8,10 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <input type="radio" v-model="pick" v-bind:value="a">
+      <select v-model="selected">
+        <!-- Objeto literal atribuído para demonstração -->
+        <option v-bind:value="{ number: 123 }">123</option>
+      </select>
     </div>
 
     <script type="text/javascript">
