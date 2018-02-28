@@ -12,13 +12,23 @@
     </div>
 
     <script type="text/javascript">
-      //registro
+
+      // registro global
       Vue.component('my-component', {
-        template: '<div>Um elemento personalizado!</div>'
+        template: '<div>Um elemento personalizado global!</div>'
       })
+
+      // componente somente no escopo de outra instância/componente, registrando-o com a opção components
+      var Child = {
+        template: '<div>Um elemento personalizado no escopo!</div>'
+      }
       // cria uma instância raiz
       new Vue({
-         el: '#example'
+         el: '#example',
+         components: {
+           // <my-component> só estará disponível no _template_ pai
+           'my-component': Child
+         }
       })
 
     </script>
