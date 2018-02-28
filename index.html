@@ -8,12 +8,7 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <input
-        type="checkbox"
-        v-model="toggle"
-        true-value="sim"
-        false-value="não"
-      >
+      <input type="radio" v-model="pick" v-bind:value="a">
     </div>
 
     <script type="text/javascript">
@@ -21,8 +16,6 @@
       var example =  new Vue({
            el: '#example',
            data: {
-
-            toggle: this.toggle
 
            }
 
