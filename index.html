@@ -8,27 +8,26 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <my-component></my-component>
+      <simple-counter></simple-counter>
+      <simple-counter></simple-counter>
+      <simple-counter></simple-counter>
     </div>
 
     <script type="text/javascript">
+      var data = { counter: 0 }
 
-      // registro global
-      Vue.component('my-component', {
-        template: '<div>Um elemento personalizado global!</div>'
+      Vue.component('simple-counter', {
+        template: '<button v-on:click="counter += 1">{{ counter }}</button>',
+        // data é tecnicamente uma função, assim o Vue não vai
+        // reclamar, mas nós retornamos a mesma referência ao
+        // mesmo objeto para qualquer instância do componente
+        data: function () {
+          return data
+        }
       })
 
-      // componente somente no escopo de outra instância/componente, registrando-o com a opção components
-      var Child = {
-        template: '<div>Um elemento personalizado no escopo!</div>'
-      }
-      // cria uma instância raiz
       new Vue({
-         el: '#example',
-         components: {
-           // <my-component> só estará disponível no _template_ pai
-           'my-component': Child
-         }
+         el: '#example'
       })
 
     </script>
