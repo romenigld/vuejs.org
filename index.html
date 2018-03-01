@@ -8,17 +8,16 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <child message="Olá!"></child>
+      <!-- kebab-case em HTML -->
+      <child my-message="olá!"></child>
     </div>
 
     <script type="text/javascript">
 
     Vue.component('child', {
-      // declara as propriedades
-      props: ['message'],
-      // assim como os dados, a propriedade pode ser usada dentro de templates
-      // e também se torna disponível na instância como this.message
-      template: '<span>{{ message }}</span>'
+      // camelCase em JavaScript
+      props: ['myMessage'],
+      template: '<span>{{ myMessage }}</span>'
     })
 
       new Vue({
