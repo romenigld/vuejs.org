@@ -8,24 +8,18 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <div id="example">
-      <simple-counter></simple-counter>
-      <simple-counter></simple-counter>
-      <simple-counter></simple-counter>
+      <child message="Olá!"></child>
     </div>
 
     <script type="text/javascript">
-    
-      Vue.component('simple-counter', {
-        template: '<button v-on:click="counter += 1">{{ counter }}</button>',
-        // data é tecnicamente uma função, assim o Vue não vai
-        // reclamar, mas nós retornamos a mesma referência ao
-        // mesmo objeto para qualquer instância do componente
-        data: function () {
-          return {
-            counter: 0
-          }
-        }
-      })
+
+    Vue.component('child', {
+      // declara as propriedades
+      props: ['message'],
+      // assim como os dados, a propriedade pode ser usada dentro de templates
+      // e também se torna disponível na instância como this.message
+      template: '<span>{{ message }}</span>'
+    })
 
       new Vue({
          el: '#example'
